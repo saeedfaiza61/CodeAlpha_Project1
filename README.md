@@ -1,9 +1,9 @@
 # CodeAlpha_Project1
  Python program to capture network traffic packets and  Analyzing captured packets 
 
-Technologies and Tools Used:
+#Technologies and Tools Used:
 
-Tool/Technology	                                                             Purpose
+#Tool/Technology	                                                             #Purpose
 Python 3                                                                 	Programming language
 Scapy                                                       	             Packet capture and packet analysis
 Wireshark                                                                	Detailed packet analysis
@@ -13,7 +13,7 @@ Command Line/Terminal	                                                     Runni
 
 
 
-Project Development:
+#Project Development:
 The project was developed using basic packet sniffer and advance packet sniffer .
 	Basic Packet Sniffer code implementation:
 A basic Python program was created using Scapy's sniff () function. It captures packets and displays information such as:
@@ -24,7 +24,7 @@ A basic Python program was created using Scapy's sniff () function. It captures 
 •	Destination port 
 •	Payload 
 
-Description:
+#Description:
 The sniff() function captures network packets.
 The show_packet () function processes each captured packet.
 The program first checks whether the packet contains an IP layer. If an IP layer exists, the program displays the source and destination IP addresses.
@@ -35,13 +35,14 @@ It then checks whether the packet contains:
 •	Another protocol 
 If TCP or UDP is detected, the program also displays the source and destination ports.
 
-	Advanced Packet Sniffer code implementation:
+#Advanced Packet Sniffer code implementation:
 The advanced version added:
 •	Packet storage 
 •	A TCP port 443 filter 
 •	PCAP file export 
 •	Compatibility with Wireshark 
-Description:
+
+#Description:
 o	from scapy.all import ...
 This imports the required Scapy functions and protocol layers.
 o	sniff()
@@ -69,7 +70,7 @@ The Raw layer is checked to determine whether the packet contains raw payload da
 o	wrpcap()
 The wrpcap() function saves the captured packets into a PCAP file.
 
-Packet Capture Filter:
+#Packet Capture Filter:
 The advanced version uses the following filter:
 tcp port 443
 This is the single packet filter used in the project.
@@ -77,29 +78,29 @@ It instructs Scapy to capture TCP traffic associated with port 443.
 Port 443 is commonly associated with HTTPS traffic.
 Using the filter helps reduce unrelated traffic and produces a more focused capture for analysis.
 
-Packet Analyzed:
+#Packet Analyzed:
 Source IP Address
 The source IP identifies where the packet originated.
-	Example:
+	Example:
 Source IP: 192.168.1.10
 Destination IP Address
 The destination IP identifies where the packet is being sent.
-	Example:
+	Example:
 Destination IP: 142.250.x.x
 
 Protocol
 The program identifies the protocol used by the packet.
-	Examples:
+	Examples:
 TCP
 UDP
 ICMP
 
 
-Source Port
+#Source Port
 The source port identifies the sending service or application endpoint.
-Destination Port
+#Destination Port
 The destination port identifies the receiving service or application endpoint.
-Payload
+#Payload
 The payload represents data carried inside the packet when the payload is available to the program.
  Packet Structure:
 
@@ -132,7 +133,7 @@ During this communication, packets contain information that allows network devic
 The packet sniffer observes these packets as they pass through the network interface available to the program.
 
 
-Program Output:
+#Program Output:
 When the advanced program starts, it displays:
 Starting packet capture...
 As packets matching the filter are captured, information similar to the following may be displayed:
@@ -145,7 +146,7 @@ Destination Port: 443
 After the specified number of packets has been captured, the program saves the capture:
 Saved to captured_traffic.pcap
 The exact IP addresses, source ports, and number of matching packets depend on the network traffic present while the program is running.
- Conclusion:
+# Conclusion:
 This project demonstrates the complete basic workflow of network packet capture and analysis using Python. The initial implementation introduced live packet sniffing and displayed important packet fields such as IP addresses, protocols, and ports.
 The advanced implementation extended the project by introducing a TCP port 443 capture filter and PCAP export. The resulting PCAP file can then be opened in Wireshark for detailed packet-level analysis.
 The project therefore provides a practical introduction to network monitoring and packet analysis using Python and commonly used cybersecurity tools.
